@@ -1,4 +1,0 @@
-DESCRIPTION="Non-interactive network downloader"
-HOMEPAGE="http://www.gnu.org/s/wget/"
-SRC_URI="mirror://gnu/wget/${P}.tar.xz"
-PATCH_URI="1.13.4-sysconfdir.patch"
