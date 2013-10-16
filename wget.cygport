@@ -1,6 +1,6 @@
 NAME="wget"
 VERSION=1.13.4
-RELEASE=1
+RELEASE=2
 CATEGORY="Net"
 SUMMARY="Non-interactive network downloader"
 DESCRIPTION="GNU Wget is a free software package for retrieving files using
@@ -8,37 +8,10 @@ HTTP, HTTPS and FTP, the most widely-used Internet protocols. It is a non-
 interactive commandline tool, so it may easily be called from scripts, cron
 jobs, terminals without X-Windows support, etc."
 HOMEPAGE="http://www.gnu.org/s/wget/"
-SRC_URI="mirror://gnu/wget/${P}.tar.xz"
+SRC_URI="mirror://gnu/wget/wget-${VERSION}.tar.xz"
 PATCH_URI="1.13.4-sysconfdir.patch"
 
-CYGCONF_ARGS="
-	--with-ssl=openssl
-	--without-libiconv-prefix
-	--without-libintl-prefix
-	--without-libpth-prefix
-	--without-libssl-prefix
-	--without-libgnutls-prefix
-	am_cv_func_iconv_works=yes
-	gl_cv_func_fcntl_f_dupfd_works=yes
-	gl_cv_func_futimens_works=yes
-	gl_cv_func_getopt_posix=yes
-	gl_cv_func_mbrtowc_incomplete_state=yes
-	gl_cv_func_mbrtowc_null_arg1=yes
-	gl_cv_func_mbrtowc_null_arg2=yes
-	gl_cv_func_mbrtowc_retval=yes
-	gl_cv_func_mbrtowc_sanitycheck=yes
-	gl_cv_func_memchr_works=yes
-	gl_cv_func_mkdir_trailing_dot_works=yes
-	gl_cv_func_mkdir_trailing_slash_works=yes
-	gl_cv_func_open_slash=yes
-	gl_cv_func_select_supports0=yes
-	gl_cv_func_snprintf_retval_c99=yes
-	gl_cv_func_snprintf_size1=yes
-	gl_cv_func_stat_dir_slash=yes
-	gl_cv_func_stat_file_slash=yes
-	gl_cv_func_strchrnul_works=yes
-	gl_cv_func_strerror_0_works=yes
-"
+CYGCONF_ARGS="--with-ssl=openssl"
 
 src_install() {
 	cd ${B}
