@@ -1,14 +1,18 @@
 NAME="wget"
-VERSION=1.13.4
-RELEASE=2
-CATEGORY="Net"
-SUMMARY="Non-interactive network downloader"
-DESCRIPTION="GNU Wget is a free software package for retrieving files using
-HTTP, HTTPS and FTP, the most widely-used Internet protocols. It is a non-
-interactive commandline tool, so it may easily be called from scripts, cron
-jobs, terminals without X-Windows support, etc."
+VERSION=1.16.3
+RELEASE=1
+CATEGORY="Web"
+SUMMARY="Utility to retrieve files from the WWW via HTTP and FTP"
+DESCRIPTION="GNU Wget is a file retrieval utility which can use either
+the HTTP, HTTPS, or FTP protocols. Wget features include the ability
+to work in the background while you're logged out, recursive retrieval
+of directories, file name wildcard matching, remote file timestamp
+storage and comparison, use of Rest with FTP servers and Range with
+HTTP servers to retrieve files over slow or unstable connections,
+support for Proxy servers, and configurability."
 HOMEPAGE="http://www.gnu.org/s/wget/"
 SRC_URI="mirror://gnu/wget/wget-${VERSION}.tar.xz"
+SRC_URI+=" $SRC_URI.sig"
 PATCH_URI="1.13.4-sysconfdir.patch"
 
 CYGCONF_ARGS="--with-ssl=openssl"
