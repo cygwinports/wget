@@ -1,5 +1,5 @@
 NAME="wget"
-VERSION=1.16.3
+VERSION=1.19.1
 RELEASE=1
 CATEGORY="Web"
 SUMMARY="Utility to retrieve files from the WWW via HTTP and FTP"
@@ -13,9 +13,8 @@ support for Proxy servers, and configurability."
 HOMEPAGE="http://www.gnu.org/s/wget/"
 SRC_URI="mirror://gnu/wget/wget-${VERSION}.tar.xz"
 SRC_URI+=" $SRC_URI.sig"
-PATCH_URI="http://pkgs.fedoraproject.org/cgit/rpms/wget.git/plain/wget-1.16.1-path.patch?h=f21"
 
-CYGCONF_ARGS="--with-ssl=openssl"
+CYGCONF_ARGS="--with-ssl=gnutls"
 
 src_install() {
 	cd ${B}
